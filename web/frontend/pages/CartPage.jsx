@@ -1,119 +1,127 @@
 import {
   Page,
-  Button,
   HorizontalGrid,
   LegacyCard,
+  Button,
+  Link,
 } from "@shopify/polaris";
-
 import Header from "../components/Header";
 
-import { TitleBar } from "@shopify/app-bridge-react";
-
-
-const ProductTitle = () => {
+const RelatedTitle = () => {
   return (
     <h2
       style={{ textAlign: "center", fontWeight: "600", lineHeight: "2.5rem" }}
     >
-      Product page
+      Related Products
     </h2>
   );
 };
 
-const CartTitle = () => {
+const RecentTitle = () => {
   return (
     <h2
       style={{ textAlign: "center", fontWeight: "600", lineHeight: "2.5rem" }}
     >
-      Cart page
+      Recently viewed
     </h2>
   );
 };
 
-const CollectionTitle = () => {
+const FrequentTitle = () => {
   return (
     <h2
       style={{ textAlign: "center", fontWeight: "600", lineHeight: "2.5rem" }}
     >
-      Collections page
+      Frequently brought together
     </h2>
   );
 };
 
-const CheckoutTitle = () => {
+const ArrivalTitle = () => {
   return (
     <h2
       style={{ textAlign: "center", fontWeight: "600", lineHeight: "2.5rem" }}
     >
-      Checkout page
+      New arrivals
     </h2>
   );
 };
 
-const ShopTitle = () => {
+const SellersTitle = () => {
   return (
     <h2
       style={{ textAlign: "center", fontWeight: "600", lineHeight: "2.5rem" }}
     >
-      Shop page
+      Best Sellers
+    </h2>
+  );
+};
+const SaleTitle = () => {
+  return (
+    <h2
+      style={{ textAlign: "center", fontWeight: "600", lineHeight: "2.5rem" }}
+    >
+      Products on sale
     </h2>
   );
 };
 
-export default function HomePage() {
+function HomeLink() {
+  return (
+    <Link url="/" monochrome removeUnderline>
+      Home
+    </Link>
+  );
+}
+
+function CartLink() {
+  return (
+    <Link url="/CartPage" monochrome removeUnderline>
+      Cart
+    </Link>
+  );
+}
+
+export default function ProductPage() {
   return (
     <>
       <Header />
-      <Page fullWidth title="Select a page to reccomend products">
+      {/* backAction={{id:"Home", content:"Home" , url:"/"}} */}
+
+      <div style={{ margin: "2rem", fontWeight: "500" }}>
+        <HomeLink /> &ensp;
+        <span>&gt;</span>
+        &ensp;
+        <CartLink />
+      </div>
+
+      <Page
+        fullWidth
+        title="Choose a widget"
+        backAction={{ id: "Home", content: "Home", url: "/" }}
+      >
         <HorizontalGrid gap="4" columns={3}>
           <div>
-            <div style={{ margin: "1rem" }}>
-              {/* <Button plain monochrome removeUnderline url="/ProductPage"> */}
-                <LegacyCard title={ProductTitle()} sectioned>
-                  <p style={{ height: "8rem", textAlign: "center" }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
-                </LegacyCard>
-              {/* </Button> */}
+            <div>
+              <div style={{ margin: "1rem" }}>
+                <Button plain monochrome removeUnderline url="/">
+                  <LegacyCard title={RelatedTitle()} sectioned>
+                    <p style={{ height: "8rem", textAlign: "center" }}>
+                      Lorem ipsum dolor sit amet, consectetur
+                      adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip
+                      ex ea commodo consequat. Duis aute irure dolor in
+                      reprehenderit in voluptate velit esse cillum dolore eu
+                      fugiat nulla pariatur.
+                    </p>
+                  </LegacyCard>
+                </Button>
+              </div>
             </div>
             <div style={{ margin: "1rem" }}>
-              <Button plain monochrome removeUnderline url="/CartPage">
-                <LegacyCard title={CartTitle()} sectioned>
-                  <p style={{ height: "8rem", textAlign: "center" }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
-                </LegacyCard>
-              </Button>
-            </div>
-          </div>
-          <div>
-            <div style={{ margin: "1rem" }}>
-              <Button plain monochrome removeUnderline url="/CollectionsPage">
-                <LegacyCard title={CollectionTitle()} sectioned>
-                  <p style={{ height: "8rem", textAlign: "center" }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    doP eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
-                  </p>
-                </LegacyCard>
-              </Button>
-            </div>
-            <div style={{ margin: "1rem" }}>
-              <Button plain monochrome removeUnderline url="/CheckoutPage">
-                <LegacyCard title={CheckoutTitle()} sectioned>
+              <Button plain monochrome removeUnderline url="/">
+                <LegacyCard title={RecentTitle()} sectioned>
                   <p style={{ height: "8rem", textAlign: "center" }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
@@ -128,8 +136,8 @@ export default function HomePage() {
           </div>
           <div>
             <div style={{ margin: "1rem" }}>
-              <Button plain monochrome removeUnderline url="/ShopPage">
-                <LegacyCard title={ShopTitle()} sectioned>
+              <Button plain monochrome removeUnderline url="/">
+                <LegacyCard title={FrequentTitle()} sectioned>
                   <p style={{ height: "8rem", textAlign: "center" }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
@@ -142,8 +150,38 @@ export default function HomePage() {
               </Button>
             </div>
             <div style={{ margin: "1rem" }}>
-              <Button plain monochrome removeUnderline url="/CheckoutPage">
-                <LegacyCard title={CheckoutTitle()} sectioned>
+              <Button plain monochrome removeUnderline url="/">
+                <LegacyCard title={ArrivalTitle()} sectioned>
+                  <p style={{ height: "8rem", textAlign: "center" }}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </LegacyCard>
+              </Button>
+            </div>
+          </div>
+          <div>
+            <div style={{ margin: "1rem" }}>
+              <Button plain monochrome removeUnderline url="/">
+                <LegacyCard title={SellersTitle()} sectioned>
+                  <p style={{ height: "8rem", textAlign: "center" }}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur.
+                  </p>
+                </LegacyCard>
+              </Button>
+            </div>
+            <div style={{ margin: "1rem" }}>
+              <Button plain monochrome removeUnderline url="/">
+                <LegacyCard title={SaleTitle()} sectioned>
                   <p style={{ height: "8rem", textAlign: "center" }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
