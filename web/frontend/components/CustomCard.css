@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  box-sizing: border-box;
+  background-color: white;
+  padding: var(--p-space-4);
+  border-bottom-left-radius: var(--p-border-radius-2);
+  border-bottom-right-radius: var(--p-border-radius-2);
+  border-top-left-radius: var(--p-border-radius-2);
+  border-top-right-radius: var(--p-border-radius-2);
+}
+
+.card:hover {
+  background-color: var(--p-surface-highlight-subdued);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--p-banner-border-highlight);
+}
+
+.card:active {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--p-banner-border-highlight);
+}
+
+.card-head {
+  text-align: center;
+}
+
+.card-content {
+  text-align: center;
+  color: var(--p-color-text-subdued);
+}
+.card-contents {
+  color: black;
+}
