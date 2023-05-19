@@ -22,7 +22,7 @@ export default function CardAction() {
             <ResourceItem url="/ProductPage">
               <div style={{ padding: "var(--p-space-4" }}>
                 <Text
-                  variant="bodyMd"
+                  variant="headingMd"
                   fontWeight="semibold"
                   as="h3"
                   alignment="center"
@@ -33,9 +33,10 @@ export default function CardAction() {
               <Text
                 variant="bodySm"
                 fontWeight="regular"
-                as="h3"
+                as="h4"
                 alignment="center"
                 color="subdued"
+                breakWord
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

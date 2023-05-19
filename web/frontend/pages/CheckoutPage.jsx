@@ -71,7 +71,7 @@ export default function CheckoutPage() {
   return (
     <>
       <TabsHead />
-      <Page fullWidth title="Select a page to reccomend products" backAction={{id:"Home", content:"Home" , url:"/"}}>
+      <Page  title="Select a page to reccomend products" backAction={{id:"Home", content:"Home" , url:"/"}}>
         <HorizontalGrid gap="4" columns={3}>
           <div>
             <LegacyCard title={RelatedTitle()} sectioned>

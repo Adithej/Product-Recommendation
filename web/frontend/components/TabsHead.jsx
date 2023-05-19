@@ -1,4 +1,4 @@
-import {LegacyCard, Link, Tabs, AlphaCard} from '@shopify/polaris';
+import { Tabs,AlphaCard} from '@shopify/polaris';
 import {useState, useCallback} from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -50,10 +50,9 @@ export default function TabsHead() {
   ];
 
   return (
-   
-    <LegacyCard >
+    <AlphaCard roundedAbove="--p-border-radius-05" padding="0">
       <Tabs tabs={tabs} selected={selected} onSelect={handleTabChange}>
       </Tabs>
-    </LegacyCard>
+    </AlphaCard>
   );
 }
